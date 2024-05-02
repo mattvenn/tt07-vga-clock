@@ -10,8 +10,8 @@ module tt_um_vga_clock (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    assign uio_out[7:1] = 7'b0;
-    assign uio_oe  = 8'b000_0001;
+    assign uio_out = 8'b0;
+    assign uio_oe  = 8'b0;
 
     wire [1:0] R;
     wire [1:0] G;
