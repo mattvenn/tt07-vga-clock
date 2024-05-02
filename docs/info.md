@@ -9,12 +9,13 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+Races the beam! Font is pre generated and loaded into registers. 6 bit colour keeps register count low.
 
 ## How to test
 
-Explain how to use your project
+Hook up a VGA monitor to the outputs and provide a clock at 31.5 MHz. Connect the 6 bit colour output up with resistors to make
+a R2R DAC. See the circuit here: https://github.com/mattvenn/6bit-pmod-vga
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+R2R DAC - you can use a VGA PMOD
