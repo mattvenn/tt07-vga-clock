@@ -28,7 +28,7 @@ pinout:
   ui[0]: "adjust hours"
   ui[1]: "adjust minutes"
   ui[2]: "adjust seconds"
-  ui[3]: "high to use VGA clock PMOD, low to use Tiny VGA PMOD"
+  ui[3]: "PMOD type select"
   ui[4]: ""
   ui[5]: ""
   ui[6]: ""

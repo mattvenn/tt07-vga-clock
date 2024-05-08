@@ -11,14 +11,17 @@ You can also include images in this folder and reference them in the markdown. E
 
 Races the beam! Font is pre generated and loaded into registers. 6 bit colour keeps register count low.
 
+Every minute the colours cycle.
+
 ## How to test
 
-Hook up a VGA monitor to the outputs and provide a clock at 31.5 MHz. Connect the 6 bit colour output up with resistors to make
-a R2R DAC. See the circuit here: https://github.com/mattvenn/6bit-pmod-vga
+Hook up a VGA monitor to the outputs and provide a clock at 31.5 MHz. 
+
+Adjust time with the inputs[2:0], and choose the type of VGA PMOD with the input[3].
 
 ## External hardware
 
-R2R DAC - you can use one of these VGA PMODs:
+VGA PMOD - you can use one of these VGA PMODs:
 
 * https://github.com/mole99/tiny-vga
 * https://github.com/TinyTapeout/tt-vga-clock-pmod
