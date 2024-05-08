@@ -22,12 +22,12 @@ module tt_um_vga_clock (
 
     assign uo_out[0] = matt_pmod ? hsync : R[1];
     assign uo_out[1] = matt_pmod ? vsync : G[1];
-    assign uo_out[2] = matt_pmod ? R[0]  : B[1];
-    assign uo_out[3] = matt_pmod ? R[1]  : vsync;
-    assign uo_out[4] = matt_pmod ? G[0]  : R[0];
-    assign uo_out[5] = matt_pmod ? G[1]  : G[0];
-    assign uo_out[6] = matt_pmod ? B[0]  : B[0];
-    assign uo_out[7] = matt_pmod ? B[1]  : hsync;
+    assign uo_out[2] = matt_pmod ? R[1]  : B[1];
+    assign uo_out[3] = matt_pmod ? R[0]  : vsync;
+    assign uo_out[4] = matt_pmod ? G[1]  : R[0];
+    assign uo_out[5] = matt_pmod ? G[0]  : G[0];
+    assign uo_out[6] = matt_pmod ? B[1]  : B[0];
+    assign uo_out[7] = matt_pmod ? B[0]  : hsync;
 
     vga_clock vga_clock (
     .clk        (clk), 
