@@ -17,16 +17,17 @@ module tt_um_vga_clock (
     wire [1:0] G;
     wire [1:0] B;
     wire hsync, vsync;
-
+    wire matt_pmod = ui_in[3];
     // https://tinytapeout.com/specs/pinouts/#common-peripherals
-    assign uo_out[0] = R[1];
-    assign uo_out[1] = G[1];
-    assign uo_out[2] = B[1];
-    assign uo_out[3] = vsync;
-    assign uo_out[4] = R[0];
-    assign uo_out[5] = G[0];
-    assign uo_out[6] = B[0];
-    assign uo_out[7] = hsync;
+
+    assign uo_out[0] = matt_pmod ? hsync : R[1];
+    assign uo_out[1] = matt_pmod ? vsync : G[1];
+    assign uo_out[2] = matt_pmod ? R[0]  : B[1];
+    assign uo_out[3] = matt_pmod ? R[1]  : vsync;
+    assign uo_out[4] = matt_pmod ? G[0]  : R[0];
+    assign uo_out[5] = matt_pmod ? G[1]  : G[0];
+    assign uo_out[6] = matt_pmod ? B[0]  : B[0];
+    assign uo_out[7] = matt_pmod ? B[1]  : hsync;
 
     vga_clock vga_clock (
     .clk        (clk), 
