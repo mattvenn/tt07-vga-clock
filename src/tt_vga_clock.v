@@ -17,17 +17,20 @@ module tt_um_vga_clock (
     wire [1:0] G;
     wire [1:0] B;
     wire hsync, vsync;
-    wire matt_pmod = ui_in[3];
-    // https://tinytapeout.com/specs/pinouts/#common-peripherals
+    
+    wire vga_clock_pmod = ui_in[3];
+    // this input switches between Tiny VGA and VGA Clock PMOD
+    // https://github.com/mole99/tiny-vga
+    // https://github.com/TinyTapeout/tt-vga-clock-pmod
 
-    assign uo_out[0] = matt_pmod ? hsync : R[1];
-    assign uo_out[1] = matt_pmod ? vsync : G[1];
-    assign uo_out[2] = matt_pmod ? R[1]  : B[1];
-    assign uo_out[3] = matt_pmod ? R[0]  : vsync;
-    assign uo_out[4] = matt_pmod ? G[1]  : R[0];
-    assign uo_out[5] = matt_pmod ? G[0]  : G[0];
-    assign uo_out[6] = matt_pmod ? B[1]  : B[0];
-    assign uo_out[7] = matt_pmod ? B[0]  : hsync;
+    assign uo_out[0] = vga_clock_pmod ? hsync : R[1];
+    assign uo_out[1] = vga_clock_pmod ? vsync : G[1];
+    assign uo_out[2] = vga_clock_pmod ? B[0]  : B[1];
+    assign uo_out[3] = vga_clock_pmod ? B[1]  : vsync;
+    assign uo_out[4] = vga_clock_pmod ? G[0]  : R[0];
+    assign uo_out[5] = vga_clock_pmod ? G[1]  : G[0];
+    assign uo_out[6] = vga_clock_pmod ? R[0]  : B[0];
+    assign uo_out[7] = vga_clock_pmod ? R[1]  : hsync;
 
     vga_clock vga_clock (
     .clk        (clk), 

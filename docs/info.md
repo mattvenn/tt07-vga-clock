@@ -18,4 +18,9 @@ a R2R DAC. See the circuit here: https://github.com/mattvenn/6bit-pmod-vga
 
 ## External hardware
 
-R2R DAC - you can use a VGA PMOD
+R2R DAC - you can use one of these VGA PMODs:
+
+* https://github.com/mole99/tiny-vga
+* https://github.com/TinyTapeout/tt-vga-clock-pmod
+
+Set input[3] low to use tiny-vga and high to use vga-clock
