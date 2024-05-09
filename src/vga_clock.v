@@ -59,7 +59,7 @@ module vga_clock (
 
             // second counter
             sec_counter <= sec_counter + 1;
-            if(sec_counter == 31_500_000) begin
+            if(sec_counter + 1 == 31_500_000) begin
                 sec_u <= sec_u + 1;
                 sec_counter <= 0;
             end
